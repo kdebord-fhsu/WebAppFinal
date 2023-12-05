@@ -12,6 +12,26 @@
     <link rel="stylesheet" href="/css/app.css">
     <script type="text/javascript" src="/js/materialize.min.js"></script>
     <link rel="manifest" href="/manifest.json">
+
+    <!-- Firebase SDKs and Configuration -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js"></script>
+
+    <script>
+        // Your Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAqdAjY9RO2dscyd1KN8_rZknkbDjzCEH4",
+            authDomain: "mobile-web-development-5a47e.firebaseapp.com",
+            projectId: "mobile-web-development-5a47e",
+            storageBucket: "mobile-web-development-5a47e.appspot.com",
+            messagingSenderId: "242842353088",
+            appId: "1:242842353088:web:49d45b1002dc6cb8ca1c25",
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
 </head>
 
 <body class="grey lighten-4">
@@ -21,38 +41,16 @@
             <span class="right grey-text text-darken-1">
                 <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
             </span>
-
         </div>
     </nav>
 
     <ul id="side-menu" class="sidenav side-menu">
-        <li><a class="subheader">TASK MANAGER</a></li>
-        <li><a href="/" class="waves-effect">Home</a></li>
-        <li><a href="/pages/about.html" class="waves-effect">About</a></li>
-        <li class="logged-in">
-            <a href="#" class="waves-effect modal-trigger" data-target="modal-account">Account</a>
-        </li>
-        <li class="logged-in">
-            <a href="#" class="waves-effect" id="logout">Logout</a>
-        </li>
-        <li class="logged-out">
-            <a href="#" class="waves-effect modal-trigger" data-target="modal-login">Login</a>
-        </li>
-        <li class="logged-out">
-            <a href="#" class="waves-effect modal-trigger" data-target="modal-signup">Sign up</a>
-        </li>
-        </span>
-        <li>
-            <div class="divider"></div>
-        </li>
-        <li><a href="/pages/contact.html" class="waves-effect"><i class="material-icons">mail_outline</i>Contact</a>
-        </li>
-
+        <!-- Your existing navigation content -->
     </ul>
 
     <!-- Tasks -->
     <div class="tasks container grey-text text-darken-1">
-
+        <!-- Your existing tasks content -->
     </div>
 
     <div class="center">
@@ -62,66 +60,22 @@
     </div>
 
     <div id="side-form" class="sidenav side-form">
-        <form class="add-task container section">
-            <h6>New Task</h6>
-            <div class="divider"></div>
-            <div class="input-field">
-                <input placeholder="Enter Task title" id="title" class="validate" type="text">
-                <label for="title">Task Title</label>
-            </div>
-            <div class="input-field">
-                <input placeholder="Enter Task description" id="description" class="validate" type="text">
-                <label for="description">Task Description</label>
-            </div>
-
-            <div class="input-field center">
-                <button class="btn-small">Add</button>
-            </div>
+        <!-- Your existing form content -->
     </div>
-    </form>
 
     <!-- SIGN UP MODAL -->
     <div id="modal-signup" class="modal">
-        <div class="modal-content">
-            <h4>Sign up</h4><br />
-            <form id="signup-form">
-                <div class="input-field">
-                    <input type="email" id="signup-email" required />
-                    <label for="signup-email">Email address</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" id="signup-password" required />
-                    <label for="signup-password">Choose password</label>
-                </div>
-                <button class="btn yellow darken-2 z-depth-0">Sign up</button>
-            </form>
-        </div>
+        <!-- Your existing signup modal content -->
     </div>
+
     <!-- LOGIN MODAL -->
     <div id="modal-login" class="modal">
-        <div class="modal-content">
-            <h4>Login</h4><br />
-            <form id="login-form">
-                <div class="input-field">
-                    <input type="email" id="login-email" required />
-                    <label for="login-email">Email address</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" id="login-password" required />
-                    <label for="login-password">Your password</label>
-                </div>
-                <button class="btn yellow darken-2 z-depth-0">Login</button>
-            </form>
-        </div>
+        <!-- Your existing login modal content -->
     </div>
 
     <!-- ACCOUNT MODAL -->
     <div id="modal-account" class="modal">
-        <div class="modal-content center-align">
-            <h4>Account details</h4><br />
-            <div class="account-details"></div>
-        </div>
-    </div>
+        <!-- Your existing account modal content -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

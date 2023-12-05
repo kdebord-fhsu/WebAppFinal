@@ -1,7 +1,7 @@
 {
-    "name": "Task Manager",
-    "short_name": "TM",
-    "description": "Manage your daily tasks",
+    "name": "Student Portal",
+    "short_name": "SP",
+    "description": "An easy To-Do list",
     "start_url": "/index.html",
     "scope": ".",
     "display": "standalone",
