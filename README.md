@@ -1,6 +1,6 @@
-# Task Manager App
+# Student Portal
 
-Task Manager App is a simple web application for managing tasks. It allows users to create, view, and delete tasks.
+The Student Portal App is a simple web application for managing assignments. It allows users to create, view, and delete tasks.
 
 ## Table of Contents
 
