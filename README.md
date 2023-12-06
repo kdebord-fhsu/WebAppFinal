@@ -7,11 +7,6 @@ Task Manager App is a simple web application for managing tasks. It allows users
 - [Features](#features)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Firebase Configuration](#firebase-configuration)
-- [Push Notifications](#push-notifications)
-- [Colors](#colors)
-- [License](#license)
 
 ## Features
 
