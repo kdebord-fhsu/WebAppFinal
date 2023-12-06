@@ -69,3 +69,14 @@ self.addEventListener("fetch", function (event) {
       .catch(() => caches.match("/pages/fallback.html"))
   );
 });
+
+self.addEventListener('push', (event) => {
+  const options = {
+    body: event.data.text(),
+    icon: 'path/to/icon.png',
+  };
+
+  event.waitUntil(
+    self.registration.showNotification('Your App Name', options)
+  );
+});

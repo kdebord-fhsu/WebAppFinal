@@ -167,3 +167,43 @@ const removeTask = (id) => {
   const task = document.querySelector(`.task[data-id="${id}"]`);
   task.remove();
 };
+// Check for support of the Notifications API
+if ('Notification' in window) {
+  Notification.requestPermission().then((permission) => {
+    if (permission === 'granted') {
+      // User has granted permission
+      subscribeToNotifications();
+    }
+  });
+}
+
+function subscribeToNotifications() {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then((registration) => {
+      return registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: 'YOUR_PUBLIC_KEY_FROM_FIREBASE',
+      });
+    })
+    .then((subscription) => {
+      // Send the subscription information to your server
+      sendSubscriptionToServer(subscription);
+    })
+    .catch((error) => {
+      console.error('Error during subscription:', error);
+    });
+}
+
+function sendSubscriptionToServer(subscription) {
+  // Send the subscription details (endpoint, keys) to your server
+  // Your server should store these details for sending push notifications
+  fetch('/subscribe', {
+    method: 'post',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      subscription: subscription,
+    }),
+  });
+}
